@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/maptalks/dist/maptalks.min.js"></script>
+    <link rel="stylesheet" href="CSS/index.css" />
+    <title>智慧医养管理平台</title>
+    <style>
+.grid-container {
+  display: grid;
+  grid-template-columns: 300px 260px;
+
+}
+.grid-item {
+  
+  border: 1px solid white;
+  font-size: 10px;
+  text-align: center;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+  </style>
+</head>
+
+
+<body>
+    <!-- 头部盒子 -->
+    <header>
+        <h1>智慧杆模块</h1>
+        <div class="showTime"></div>
+        
+        <script>
+            var t = null;
+            t = setTimeout(time, 1000); //開始运行
+            function time() {
+                clearTimeout(t); //清除定时器
+                dt = new Date();
+                var y = dt.getFullYear();
+                var mt = dt.getMonth() + 1;
+                var day = dt.getDate();
+                var h = dt.getHours(); //获取时
+                var m = dt.getMinutes(); //获取分
+                var s = dt.getSeconds(); //获取秒
+                document.querySelector(".showTime").innerHTML =
+                    "当前时间：" +
+                    y +
+                    "年" +
+                    mt +
+                    "月" +
+                    day +
+                    "-" +
+                    h +
+                    "时" +
+                    m +
+                    "分" +
+                    s +
+                    "秒";
+                t = setTimeout(time, 1000); //设定定时器，循环运行
+            }
+        </script>
+        
+    </header>
+    <!-- 页面主体部分 -->
+    <section class="mainbox">
+        <!-- 左边部分 -->
+        
+        <!-- 中间部分 -->
+        <div >
+
+        <!-- 右边部分 -->
+            
+               <div class="grid-container" >
+                  <div class="grid-item">
+                   <h1 style="color:#04A4E5;text-align:center;margin-bottom:-10%">视频模块</h1>
+                   <video src = "video/traffic.mp4" autoplay muted loop>
+                   </video>
+                  </div>
+                  <div class="grid-item">
+                  <table id="example" class="center" style="solid #00ACD8 width:100% height:90% text-align:center">
+                  <h1 style="color:#04A4E5;text-align: center;">环境监测模块</h1>
+                  <tr style="color:#04A4E5;font-size:75%;">
+                   <th>二氧化硫(So2)</th>
+                   <td>0.01</td>
+                  </tr>
+                  <tr style="color:#04A4E5;font-size:75%;">
+                   <th>总悬浮颗粒物（TSP）</th>
+                   <td>0.07</td>
+                  </tr>
+                  <tr style="color:#04A4E5;font-size:75%;">
+                   <th>可吸入颗粒物(PM1.0)</th>
+                   <td>0.03</td>
+                  </tr>
+                  <tr style="color:#04A4E5;font-size:75%;">
+                   <th>氮氧化物（NOx）</th>
+                   <td>0.04</td>
+                  </tr>
+                  <tr style="color:#04A4E5; font-size:75%;">
+                   <th>二氧化氮（No2）</th>
+                   <td>0.03</td>
+                  </tr>
+                  <tr style="color:#04A4E5; font-size:75%;">
+                   <th>臭氧（O3）</th>
+                   <td>0.08</td>
+                  </tr>
+                  </table>
+                  </div>
+                  <div class="grid-item">
+                   <h1 style="color:#04A4E5;text-align: center;margin-bottom:5%;">设备自检测模块</h1>
+                   <p style="color:#04A4E5;">所在位置信息：</p>
+                   <p style="color:#04A4E5;">输出电压：XXX</p>
+                   <p style="color:#04A4E5;">当前信号强度：XXX</p>
+                   <p style="color:#04A4E5;">当前负载：XXX</p>
+                   <p style="color:#04A4E5;">设备温度：XXX</p>
+                  </div>
+                  <div class="grid-item">
+                   
+                  <div class="row">
+                    <h1 style="color:#04A4E5;text-align: center;margin-bottom:5%;">紧急呼叫模块</h1>
+                    <img src="images/button_green.png" alt="Snow" style="width:25%">
+                    <img src="images/button_red.png" alt="Forest" style="width:25%">
+                  </div>
+                  
+                  
+                  
+                  </div>
+               </div>
+        </div>
+        
+    </section>
+    <!-- 引入屏幕适配js -->
+    
+    <script src="js/flexible.js"></script>
+    <!-- 引入ECharts库 -->
+    <script src="js/echarts.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <!-- 引入中国地图文件js -->
+    <script src="js/china.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
